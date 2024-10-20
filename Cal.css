@@ -44,7 +44,7 @@ h1 {
     color: black;
     font-weight: bolder;
     font-size: 1.5rem;
-    width: 22%;
+    width: 23%;
     margin-bottom: 10px;
 }
 
@@ -113,9 +113,9 @@ h1 {
     font-weight: bolder;
     font-size: 1.5rem;
     width: 20%;
-    height:70px;
-    margin-bottom: 10px;
-    margin-left: auto;
+    height:70px;f
+    /* margin-bottom: 10px;
+    margin-left: auto; */
 }
 
 .conatainer {
@@ -137,6 +137,7 @@ body {
     }
 }
 
+
 @media only screen and (max-width: 480px) {
     .button {
         font-size: 1rem;
@@ -145,6 +146,7 @@ body {
 
     h1 {
         font-size: 6vw;
+        margin-left: 10%;
     }
 
     .row input {
