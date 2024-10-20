@@ -11,8 +11,6 @@ Array.from(buttons).forEach((button) => {
             try {
                 string = eval(string).toString(); 
                 // Evaluate and convert the result to a string
-                console.log(string);
-               
                 document.querySelector('input').value = string;
                 evaluated = true; // Mark as evaluated
             } catch {
@@ -26,12 +24,15 @@ Array.from(buttons).forEach((button) => {
             document.querySelector('input').value = string;
             evaluated = false; // Clear evaluation flag
         } 
-        else if (buttonValue == 'X') {
-            if (!evaluated) { // Only allow backspace if evaluated is false
-                string = string.slice(0, -1); // Remove the last character from string
+        // Backspace functionality for 'X'
+        else if (buttonValue.trim() == 'C') {
+            if (string.length > 0) {
+                string = string.slice(0, -1); // Remove the last character
+                console.log(string);
                 document.querySelector('input').value = string;
             }
         }
+         
         else {
             // If a new operation is pressed after evaluation, continue from the result
             if (evaluated && isNaN(buttonValue)) {
@@ -42,10 +43,8 @@ Array.from(buttons).forEach((button) => {
                 evaluated = false;
             }
 
-            
             string += buttonValue; // Append new input to the string
             document.querySelector('input').value = string;
-            
         }
     });
 });
